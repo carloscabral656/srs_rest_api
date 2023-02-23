@@ -37,9 +37,7 @@ class CardController extends Controller
      */
     public function store(Request $request)
     {
-        return $request->all();
-        $data = $request->all();
-        return $this->service->store($data);
+        return $this->service->store($request->all());
     }
 
     /**
@@ -50,18 +48,7 @@ class CardController extends Controller
      */
     public function show($id)
     {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
+        return $this->service->show($id);
     }
 
     /**
@@ -73,7 +60,7 @@ class CardController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        return $this->service->update($request->all(), $id);
     }
 
     /**
@@ -84,6 +71,6 @@ class CardController extends Controller
      */
     public function destroy($id)
     {
-        //
+        return $this->service->destroy($id);
     }
 }
